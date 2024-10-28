@@ -1,0 +1,689 @@
+<html>
+ <head>
+  <title>
+   Eureka
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .navbar {
+            font-family: 'Work Sans', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: white;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .navbar .logo span {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: #282c30;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+            cursor: pointer; 
+            text-decoration: none; 
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .navbar .hamburger {
+            display: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .navbar .logo img {
+            height: 55px; 
+            width: auto;
+            margin-right: 10px;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-image: url('img/fondo.png');
+            background-size: cover;
+            background-color: #000000;
+            color: white;
+            padding: 60px 40px;
+            height: 40vh;
+        }
+        .hero .text {
+            max-width: 50%;
+        }
+        .hero .text h1 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 70px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .hero .text h2 {
+            font-family: 'Della Respira', serif;
+            font-size: 20px;
+            font-weight: 300;
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+        .hero .text .subheading {
+            font-family: 'Della Respira', serif;
+            font-size: 22px;
+            color: #6dc9dd;
+        }
+        
+        .hero .image img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0;
+            align-self: flex-end;
+            position: sticky;
+        }
+        .container_propuesta {
+            margin: 110px auto 0 auto;
+            text-align: left;
+            max-width: 100%;
+            padding: 20px 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+        h3 {
+            color: #294e7a;
+            font-size: 45px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .underline_propuesta {
+            width: 200px;
+            height: 3px;
+            background-color: #294e7a;
+            margin: 0 auto 20px auto;
+        }
+        p {
+            color: #4a4a4a;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            font-weight: 700;
+        }
+        footer {
+            position: relative;
+            text-align: center;
+            font-size: 12px;
+            padding: 10px 0;
+            background-color: rgba(109, 201, 221, 0.255);
+        }
+        footer p {
+            margin: 5px 0;
+            color: rgb(0, 0, 0);
+            opacity: 1;
+        }
+        footer img {
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            width: 180px;
+            height: 100%;
+        }
+
+        .container {
+            margin: 10 auto;
+            flex-wrap: wrap;
+        }
+        .header {
+            display: flex;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .header div:first-child {
+            margin-left: 400px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #274972;
+            margin: 0;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 16px;
+            color: #333;
+            margin: 5px 0 20px 0;
+            font-weight: 400;
+        }
+        .header .logo {
+            text-align: center;
+            margin-right: 30px;
+        }
+        .header .logo img {
+            width: 320px;
+            margin-left: -80px;
+            position: absolute;
+            bottom: 0px;
+            right: 400px;
+        }
+        .header .logo p {
+            font-size: 30px;
+            color: #274972;
+            margin: 200px 470 0 0;
+            font-weight: 700;
+
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .button {
+            text-decoration: none;
+            background-color: #6dc9dd;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .palette {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .palette h2 {
+            font-size: 24px;
+            color: #274972;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        .palette h2::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 2px;
+            background-color: #274972;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .colors {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .color {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #000;
+        }
+        .color:nth-child(1) {
+            background-color: #6dc9dd;
+            color: #000;
+        }
+        .color:nth-child(2) {
+            background-color: #274972;
+            color: #fff;
+        }
+        .color:nth-child(3) {
+            background-color: #3569a6;
+            color: #fff;
+        }
+        .color:nth-child(4) {
+            background-color: #ffffff;
+            color: #000;
+        }
+        .color:nth-child(5) {
+            background-color: #000000;
+            color: #fff;
+        }
+        .team {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .team h2 {
+            font-size: 24px;
+            color: #274972;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        .team h2::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 2px;
+            background-color: #274972;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .teams {
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .team-member {
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .team-member h3 {
+            margin: 15px 0 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .team-member p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .arbol {
+            text-align: left;
+            margin-top: 40px;
+            margin-left: 430px;
+        }
+        .arbol h2 {
+            font-size: 24px;
+            color: #274972;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        .arbol img {
+            height: auto;
+            width: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: 100%;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero .text {
+                padding: 10px;
+            }
+
+            .hero .text h2 {
+                font-size: 16px;
+                line-height: 1.2;
+            }
+
+            .subheading {
+                font-size: 18px;
+                line-height: 1.3;
+                margin-bottom: 10px;
+            }
+
+            .container {
+                width: 100%;
+                padding: 0 15px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .column {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .container {
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center;
+                position: static;
+            }
+            .header {
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .header h1 {
+                font-size: 24px; 
+                margin: 10px 0;
+                line-height: 1.2;
+                text-align: center;
+            }
+            .header p  {
+                font-size: 16px; 
+                margin: 5px 0;
+                line-height: 1.4;
+                text-align: center;
+            }
+            .header .logo {
+                margin: 20px 0 0 0;
+                text-align: center;
+                margin-left: 0;
+            }
+            .header div:first-child {
+                margin-left: 0px;
+            }
+            .header .logo img {
+                width: 320px;
+                margin: 20px auto 0 auto;
+                position: static;
+                display: block;
+            }
+            .header .logo p {
+                margin: 0 auto; 
+                display: block;
+                margin-bottom: 30px;
+                align-items: center;
+            }
+            .button-container {
+                position: static;
+                margin-top: 20px;
+                text-align: center;
+                width: 10%;
+            }
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 40px;
+                background-color: white;
+                border: 1px solid #ccc;
+                padding: 10px;
+            }
+            .navbar .menu a {
+                margin: 10px 0;
+            }
+            .navbar .hamburger {
+                display: block;
+            }
+            .navbar .menu.show {
+                display: flex;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero .text {
+                max-width: 100%;
+                order: 2;
+            }
+            .hero .image {
+                display: none;
+            }
+            .container_propuesta {
+                padding: 20px 20px;
+            }
+            p {
+                text-align: justify;
+            }
+            footer {
+                text-align: center;
+                padding: 10px 0;
+            }
+            footer img {
+                display: none;
+            }
+            footer p {
+                text-align: center;
+            }
+            .arbol {
+                margin-left: 0;
+                text-align: center;
+            }
+            .arbol img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+            }
+            .colors {
+                flex-direction: column;
+                align-items: center;
+            }
+            .team-member p {
+                text-align: center;
+            }
+            
+
+        }
+  </style>
+  <script>
+   function toggleMenu() {
+            const menu = document.querySelector('.navbar .menu');
+            menu.classList.toggle('show');
+        }
+  </script>
+ </head>
+ <body>
+  <div class="navbar">
+   <div class="logo">
+    <img src="img/logo.png"/>
+    <a href="#" style="text-decoration: none;">
+     <span>
+      EUREKA
+     </span>
+    </a>
+   </div>
+   <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars">
+    </i>
+   </div>
+   <div class="menu">
+    <a onclick="location.href='#team'">
+     Integrantes
+    </a>
+    <a href="#">
+     Proyecto
+    </a>
+   </div>
+  </div>
+  <div class="hero">
+   <div class="text">
+    <h2 class="subheading">
+     INSTITUTO DE APOYO UNIVERSITARIO
+    </h2>
+    <h1>
+     ¡Lo encontraste!
+     <br/>
+     El apoyo que
+     <br/>
+     necesitas
+    </h1>
+    <h2>
+     Preparación de INGRESOS, PARCIALES y FINALES de diversas
+     <br/>
+     carreras universitarias.
+    </h2>
+   </div>
+   <div class="image">
+    <img alt="Dos estudiantes, un hombre y una mujer, sonriendo y sosteniendo libros y un teléfono" src="img/alumnos.png"/>
+   </div>
+  </div>
+  <div class="container_propuesta">
+   <h3>
+    Nuestra Propuesta
+   </h3>
+   <div class="underline_propuesta">
+   </div>
+   <p>
+    Nuestro principal objetivo como instituto es ofrecer apoyo académico personalizado a estudiantes universitarios de entre 18 y 25 años, quienes buscan mejorar su rendimiento académico con métodos de estudio flexibles y accesibles.
+   </p>
+   <p>
+    Nos enfocamos en ayudar a los estudiantes a desarrollar estrategias de aprendizaje efectivas, adaptadas a sus necesidades y tiempos, brindándoles un acompañamiento constante que les permita alcanzar sus metas educativas.
+   </p>
+   <p>
+    Nuestra forma de impulsar el proyecto es a través de nuestras plataformas, donde los estudiantes pueden inscribirse a nuestras clases o acceder a recursos gratuitos que les ayudarán a mejorar sus estudios.
+   </p>
+   <p>
+    Nuestra motivación principal es brindar a los jóvenes herramientas que les permitan enfrentar con confianza los desafíos académicos y así lograr sus objetivos educativos. Creemos que con el apoyo adecuado, todos los estudiantes pueden tener su propio
+    <span class="highlight">
+     “Eureka”
+    </span>
+    en su camino universitario.
+   </p>
+  </div>
+  <div class="container">
+   <div class="header">
+    <div>
+     <h1>
+      Nombre del Proyecto
+     </h1>
+     <p>
+      Instituo de Apoyo Universitario: Eureka
+     </p>
+     <h1>
+      Eslogan
+     </h1>
+     <p>
+      ¡Lo encontraste! El apoyo que necesitas
+     </p>
+     <h1>
+      Dominio
+     </h1>
+     <p>
+      Se utilizará el dominio de GitHub Pages
+     </p>
+    </div>
+    <div class="logo">
+     <img alt="Logo de un birrete de graduación" src="img/logo.png"/>
+     <p>
+      Logo
+     </p>
+    </div>
+    <div class="button-container">
+        <a class="button" href="https://design.penpot.app/#/view/42a0cdf3-4d18-8022-8005-0c805e9dbe29?page-id=42a0cdf3-4d18-8022-8005-0c805e9dbe2a&section=interactions&index=0&share-id=f4c411c4-dd43-81ae-8005-147be38a9650" target="_blank">
+            Prototipado
+        </a>
+    </div>
+   </div>
+   <div class="palette">
+    <h2>
+     Paleta de Colores
+    </h2>
+    <div class="colors">
+     <div class="color">
+      #6dc9dd
+     </div>
+     <div class="color">
+      #274972
+     </div>
+     <div class="color">
+      #3569a6
+     </div>
+     <div class="color">
+      #ffffff
+     </div>
+     <div class="color">
+      #000000
+     </div>
+    </div>
+   </div>
+   <div class="team">
+    <h2 id="team">
+        Nuestro equipo
+    </h2>
+   </div>
+   <div class="teams">
+    <div class="team-member">
+        <img alt="Foto de Martin Pablo Carballo" height="200" src="img/Foto Martin.png" width="200"/>
+        <h3>
+        Martin Pablo Carballo           
+        </h3>
+        <p>
+            Comunicador Web
+        </p>
+    </div>
+    <div class="team-member">
+        <img alt="Foto de Juliana Gómez Traverso" src="img/Foto Juliana.jpg"/>
+        <h3>
+        Juliana Gómez Traverso
+        </h3>
+        <p>
+            Diseñadora UX/UI
+        </p>
+    </div>
+    <div class="team-member">
+        <img alt="Foto de Facundo Román Molina" height="200" src="img/Foto Facundo.png" width="200"/>
+        <h3>
+        Facundo Román Molina
+        </h3>
+        <p>
+           Maquetador
+        </p>
+    </div>
+    <div class="team-member">
+        <img alt="Foto de Ana María Martínez Pérez" src="img/Foto Ana.png"/>
+        <h3>
+        Ana María Martínez Pérez
+        </h3>
+        <p>
+          Programadora
+        </p>
+    </div>
+    </div>
+    <div class="arbol">
+        <h2>
+            Árbol del Proyecto
+        </h2>
+        <img src="img/Arbol.png" alt="guia del arbol del proyecto">
+    </div>
+  </div>
+  <footer>
+   <p>
+    Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12
+   </p>
+   <p>
+    Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024
+   </p>
+   <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
+  </footer>
+ </body>
+</html>
