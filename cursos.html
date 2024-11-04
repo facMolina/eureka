@@ -1,0 +1,178 @@
+<html>
+ <head>
+  <title>
+   Eureka
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
+  <style>
+   html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Work Sans', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+        }
+        .navbar {
+            font-family: 'Work Sans', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: white;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .navbar .logo span {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: #282c30;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+            cursor: pointer; 
+            text-decoration: none; 
+            align-items: center;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .navbar .menu a.contacto {
+            color: white;
+            background-color: #6dc9dd;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .navbar .hamburger {
+            display: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .navbar .logo img {
+            height: 55px; 
+            width: auto;
+            margin-right: 10px;
+        }
+        footer {
+            position: relative;
+            text-align: center;
+            font-size: 12px;
+            padding: 10px 0;
+            background-color: rgba(109, 201, 221, 0.255);
+        }
+        footer p {
+            margin: 5px 0;
+            color: rgb(0, 0, 0);
+            opacity: 1;
+        }
+        footer img {
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            width: 100px;
+            height: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
+            }
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                border: 1px solid #ccc;
+                padding: 10px;
+            }
+            .navbar .menu a {
+                margin: 10px 0;
+                width: 100%;
+                text-align: left;
+            }
+            .navbar .hamburger {
+                display: block;
+                font-size: 20px;
+                cursor: pointer;
+                align-self: flex-end;
+            }
+            .navbar .menu.show {
+                display: flex;
+            }
+            footer img {
+                display: none;
+            }
+        }
+  </style>
+  <script>
+   function toggleMenu() {
+            const menu = document.querySelector('.navbar .menu');
+            menu.classList.toggle('show');
+        }
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <div class="navbar">
+    <div class="logo">
+     <img src="img/logo.png"/>
+     <a href="index.html" style="text-decoration: none;">
+      <span>
+       EUREKA
+      </span>
+     </a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+     <i class="fas fa-bars">
+     </i>
+    </div>
+    <div class="menu">
+        <a href="cursos.html">
+        Cursos
+        </a>
+        <a href="recursos.html">
+        Recursos
+        </a>
+        <a href="foro.html">
+        Foro
+        </a>
+        <a href="faq.html">
+        FAQ
+        </a>
+        <a href="contacto.html" class="contacto">
+        Contacto
+        </a>
+    </div>
+   </div>
+  </div>
+  <footer>
+   <p>
+    Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12
+   </p>
+   <p>
+    Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024
+   </p>
+   <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
+  </footer>
+ </body>
+</html>

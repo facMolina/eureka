@@ -6,9 +6,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
   <style>
-   body {
+   html, body {
+            height: 100%;
             margin: 0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Work Sans', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
         }
         .navbar {
             font-family: 'Work Sans', sans-serif;
@@ -38,6 +46,7 @@
             gap: 20px;
             cursor: pointer; 
             text-decoration: none; 
+            align-items: center;
         }
         .navbar .menu a {
             text-decoration: none;
@@ -45,6 +54,12 @@
             font-family: 'Work Sans', sans-serif;
             font-size: 20px;
             font-weight: 700;
+        }
+        .navbar .menu a.contacto {
+            color: white;
+            background-color: #6dc9dd;
+            padding: 10px 20px;
+            border-radius: 10px;
         }
         .navbar .hamburger {
             display: none;
@@ -89,7 +104,18 @@
             font-size: 22px;
             color: #6dc9dd;
         }
-        
+        .hero .button {
+            display: inline-block;
+            color: white;
+            background-color: #6dc9dd;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 10px; /* Reduce el margen superior */
+        }
         .hero .image img {
             max-width: 100%;
             height: auto;
@@ -97,38 +123,74 @@
             align-self: flex-end;
             position: sticky;
         }
-        .container_propuesta {
-            margin: 110px auto 0 auto;
-            text-align: left;
-            max-width: 100%;
-            padding: 20px 110px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff;
-        }
-        h3 {
-            color: #294e7a;
-            font-size: 45px;
-            font-weight: 700;
+        .new-section {
             text-align: center;
+            padding: 20px;
+        }
+        .new-section .header {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a3d7c;
             margin-bottom: 10px;
         }
-        .underline_propuesta {
-            width: 200px;
-            height: 3px;
-            background-color: #294e7a;
-            margin: 0 auto 20px auto;
+        .new-section .divider {
+            width: 50px;
+            height: 2px;
+            background-color: #1a3d7c;
+            margin: 0 auto 20px;
         }
-        p {
-            color: #4a4a4a;
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        .new-section .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        .highlight {
+        .new-section .content img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .new-section .text-content {
+            text-align: left;
+            max-width: 600px;
+            margin-left: 20px;
+        }
+        .new-section .text-content h2 {
+            font-size: 18px;
             font-weight: 700;
+            color: #1a3d7c;
+        }
+        .new-section .text-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333333;
+        }
+        .new-section .features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .new-section .feature {
+            text-align: center;
+            max-width: 200px;
+            margin: 10px;
+        }
+        .new-section .feature i {
+            font-size: 40px;
+            color: #1a3d7c;
+            margin-bottom: 10px;
+        }
+        .new-section .feature h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: black;
+            margin-bottom: 10px;
+        }
+        .new-section .feature p {
+            font-size: 14px;
+            color: #333333;
         }
         footer {
             position: relative;
@@ -146,303 +208,34 @@
             position: absolute;
             right: 20px;
             bottom: 10px;
-            width: 180px;
+            width: 100px;
             height: 100%;
-        }
-
-        .container {
-            margin: 10 auto;
-            flex-wrap: wrap;
-        }
-        .header {
-            display: flex;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            flex-wrap: wrap;
-        }
-        .header div:first-child {
-            margin-left: 400px;
-        }
-        .header h1 {
-            font-size: 24px;
-            color: #274972;
-            margin: 0;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .header p {
-            font-size: 16px;
-            color: #333;
-            margin: 5px 0 20px 0;
-            font-weight: 400;
-        }
-        .header .logo {
-            text-align: center;
-            margin-right: 30px;
-        }
-        .header .logo img {
-            width: 320px;
-            margin-left: -80px;
-            position: absolute;
-            bottom: 0px;
-            right: 400px;
-        }
-        .header .logo p {
-            font-size: 30px;
-            color: #274972;
-            margin: 200px 470 0 0;
-            font-weight: 700;
-
-        }
-        .button-container {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .button {
-            text-decoration: none;
-            background-color: #6dc9dd;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 400;
-        }
-        .palette {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .palette h2 {
-            font-size: 24px;
-            color: #274972;
-            margin-bottom: 10px;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-        .palette h2::after {
-            content: '';
-            display: block;
-            width: 150px;
-            height: 2px;
-            background-color: #274972;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .colors {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        .color {
-            width: 200px;
-            height: 200px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 22px;
-            font-weight: bold;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            border: 1px solid #000;
-        }
-        .color:nth-child(1) {
-            background-color: #6dc9dd;
-            color: #000;
-        }
-        .color:nth-child(2) {
-            background-color: #274972;
-            color: #fff;
-        }
-        .color:nth-child(3) {
-            background-color: #3569a6;
-            color: #fff;
-        }
-        .color:nth-child(4) {
-            background-color: #ffffff;
-            color: #000;
-        }
-        .color:nth-child(5) {
-            background-color: #000000;
-            color: #fff;
-        }
-        .team {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .team h2 {
-            font-size: 24px;
-            color: #274972;
-            margin-bottom: 10px;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-        .team h2::after {
-            content: '';
-            display: block;
-            width: 150px;
-            height: 2px;
-            background-color: #274972;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .teams {
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .team-member {
-            border-radius: 10px;
-            padding: 20px;
-            width: 200px;
-            text-align: center;
-        }
-        .team-member img {
-            width: 100%;
-            border-radius: 50%;
-        }
-        .team-member h3 {
-            margin: 15px 0 5px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .team-member p {
-            margin: 0;
-            font-size: 14px;
-        }
-        .arbol {
-            text-align: left;
-            margin-top: 40px;
-            margin-left: 430px;
-        }
-        .arbol h2 {
-            font-size: 24px;
-            color: #274972;
-            margin-bottom: 10px;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-        .arbol img {
-            height: auto;
-            width: 80%;
-            display: block;
-            margin-left: auto;
-            margin-right: 100%;
-            margin-bottom: 60px;
         }
         
         @media (max-width: 768px) {
-            .hero .text {
-                padding: 10px;
-            }
-
-            .hero .text h2 {
-                font-size: 16px;
-                line-height: 1.2;
-            }
-
-            .subheading {
-                font-size: 18px;
-                line-height: 1.3;
-                margin-bottom: 10px;
-            }
-
-            .container {
-                width: 100%;
-                padding: 0 15px;
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-
-            .column {
-                width: 100%;
-                margin-bottom: 15px;
-            }
-            .container {
-                flex-direction: column; 
-                align-items: center; 
-                text-align: center;
-                position: static;
-            }
-            .header {
-                flex-direction: column; 
-                align-items: center; 
-                text-align: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-            .header h1 {
-                font-size: 24px; 
-                margin: 10px 0;
-                line-height: 1.2;
-                text-align: center;
-            }
-            .header p  {
-                font-size: 16px; 
-                margin: 5px 0;
-                line-height: 1.4;
-                text-align: center;
-            }
-            .header .logo {
-                margin: 20px 0 0 0;
-                text-align: center;
-                margin-left: 0;
-            }
-            .header div:first-child {
-                margin-left: 0px;
-            }
-            .header .logo img {
-                width: 320px;
-                margin: 20px auto 0 auto;
-                position: static;
-                display: block;
-            }
-            .header .logo p {
-                margin: 0 auto; 
-                display: block;
-                margin-bottom: 30px;
-                align-items: center;
-            }
-            .button-container {
-                position: static;
-                margin-top: 20px;
-                text-align: center;
-                width: 10%;
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
             }
             .navbar .menu {
                 display: none;
                 flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 40px;
+                width: 100%;
                 background-color: white;
                 border: 1px solid #ccc;
                 padding: 10px;
             }
             .navbar .menu a {
                 margin: 10px 0;
+                width: 100%;
+                text-align: left;
             }
             .navbar .hamburger {
                 display: block;
+                font-size: 20px;
+                cursor: pointer;
+                align-self: flex-end;
             }
             .navbar .menu.show {
                 display: flex;
@@ -450,49 +243,54 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px;
+                height: auto;
             }
             .hero .text {
                 max-width: 100%;
                 order: 2;
+                padding: 10px;
+            }
+            .hero .text h1 {
+                font-size: 40px;
+            }
+            .hero .text h2 {
+                font-size: 16px;
+                line-height: 1.2;
+            }
+            .hero .text .subheading {
+                font-size: 18px;
+                line-height: 1.3;
+                margin-bottom: 10px;
+            }
+            .hero .button {
+                margin-top: 10px;
             }
             .hero .image {
                 display: none;
             }
-            .container_propuesta {
-                padding: 20px 20px;
+            .new-section .content {
+                flex-direction: column;
+                align-items: center;
             }
-            p {
-                text-align: justify;
+            .new-section .content img {
+                margin: 0 0 20px 0;
             }
-            footer {
+            .new-section .text-content {
+                margin: 0;
                 text-align: center;
-                padding: 10px 0;
+            }
+            .new-section .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            .new-section .feature {
+                max-width: 100%;
+                margin: 10px 0;
             }
             footer img {
                 display: none;
             }
-            footer p {
-                text-align: center;
-            }
-            .arbol {
-                margin-left: 0;
-                text-align: center;
-            }
-            .arbol img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 90%;
-            }
-            .colors {
-                flex-direction: column;
-                align-items: center;
-            }
-            .team-member p {
-                text-align: center;
-            }
-            
-
         }
   </style>
   <script>
@@ -503,48 +301,110 @@
   </script>
  </head>
  <body>
-  <div class="navbar">
-   <div class="logo">
-    <img src="img/logo.png"/>
-    <a href="#" style="text-decoration: none;">
-     <span>
-      EUREKA
-     </span>
-    </a>
+  <div class="content">
+   <div class="navbar">
+    <div class="logo">
+     <img src="img/logo.png"/>
+     <a href="index.html" style="text-decoration: none;">
+      <span>
+       EUREKA
+      </span>
+     </a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+     <i class="fas fa-bars">
+     </i>
+    </div>
+    <div class="menu">
+        <a href="cursos.html">
+         Cursos
+        </a>
+        <a href="recursos.html">
+         Recursos
+        </a>
+        <a href="foro.html">
+         Foro
+        </a>
+        <a href="faq.html">
+         FAQ
+        </a>
+        <a href="contacto.html" class="contacto">
+         Contacto
+        </a>
+    </div>
    </div>
-   <div class="hamburger" onclick="toggleMenu()">
-    <i class="fas fa-bars">
-    </i>
+   <div class="hero">
+    <div class="text">
+     <h2 class="subheading">
+      INSTITUTO DE APOYO UNIVERSITARIO
+     </h2>
+     <h1>
+      ¡Lo encontraste!
+      <br/>
+      El apoyo que
+      <br/>
+      necesitas
+     </h1>
+     <h2>
+      Preparación de INGRESOS, PARCIALES y FINALES de diversas
+      <br/>
+      carreras universitarias.
+     </h2>
+     <a href="#" class="button">Ver cursos disponibles</a>
+    </div>
+    <div class="image">
+     <img alt="Dos estudiantes, un hombre y una mujer, sonriendo y sosteniendo libros y un teléfono" src="img/alumnos.png"/>
+    </div>
    </div>
-   <div class="menu">
-    <a onclick="location.href='#team'">
-     Integrantes
-    </a>
-    <a href="#">
-     Proyecto
-    </a>
-   </div>
-  </div>
-  <div class="hero">
-   <div class="text">
-    <h2 class="subheading">
-     INSTITUTO DE APOYO UNIVERSITARIO
-    </h2>
-    <h1>
-     ¡Lo encontraste!
-     <br/>
-     El apoyo que
-     <br/>
-     necesitas
-    </h1>
-    <h2>
-     Preparación de INGRESOS, PARCIALES y FINALES de diversas
-     <br/>
-     carreras universitarias.
-    </h2>
-   </div>
-   <div class="image">
-    <img alt="Dos estudiantes, un hombre y una mujer, sonriendo y sosteniendo libros y un teléfono" src="img/alumnos.png"/>
+   <div class="new-section">
+    <div class="header">
+     ¡Lo encontraste! El apoyo que necesitas
+    </div>
+    <div class="divider">
+    </div>
+    <div class="content">
+     <img alt="Estudiantes lanzando birretes al aire en una ceremonia de graduación" height="400" src="img/recibidos.jpg" width="600"/>
+     <div class="text-content">
+      <h2>
+       ¡No dejes que la frustración te detenga!
+      </h2>
+      <p>
+       Te acompañamos en la preparación de distintas materias, ayudándote a entender los contenidos y crear hábitos de estudio efectivos para avanzar en tu carrera. Ofrecemos cursos con una metodología pedagógica clara y materiales actualizados, orientados a las evaluaciones universitarias, en un ambiente de aprendizaje basado en el compañerismo y la confianza entre alumnos y profesores.
+      </p>
+     </div>
+    </div>
+    <div class="features">
+     <div class="feature">
+      <i class="fas fa-chalkboard-teacher">
+      </i>
+      <h3>
+       Profesores experimentados
+      </h3>
+      <p>
+       Clases de excelente nivel didáctico para lograr un verdadero aprendizaje
+      </p>
+     </div>
+     <div class="feature">
+      <i class="fas fa-map-marker-alt">
+      </i>
+      <h3>
+       Excelente ubicación
+      </h3>
+      <p>
+       Ubicados estratégicamente a solo tres cuadras de Ciudad Universitaria
+      </p>
+     </div>
+     <div class="feature">
+      <i class="fas fa-graduation-cap">
+      </i>
+      <h3>
+       Más de 15 años de experiencia
+      </h3>
+      <p>
+       Ayudando a alumnos en su proceso de aprendizaje en la universidad
+      </p>
+     </div>
+    </div>
    </div>
   </div>
   <footer>
