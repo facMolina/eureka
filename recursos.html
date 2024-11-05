@@ -1,12 +1,10 @@
 <html>
- <head>
-  <title>
-   Eureka
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
-  <style>
-   html, body {
+<head>
+    <title>Eureka</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Della+Respira&family=Work+Sans:wght@700&family=Cinzel&display=swap" rel="stylesheet"/>
+    <style>
+        html, body {
             height: 100%;
             margin: 0;
             font-family: 'Work Sans', sans-serif;
@@ -123,56 +121,208 @@
                 display: none;
             }
         }
-  </style>
-  <script>
-   function toggleMenu() {
+        .header {
+            background: url('img/fondo.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+            font-weight: 300;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+            margin: 20px auto 0; /* Añade margen superior */
+        }
+        .card {
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .card .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex: 1;
+            background: url('img/fondo.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .card .content h3 {
+            margin: 0;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }
+        .card .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            flex: 2;
+        }
+        .card .details .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .card .details .item i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .card .details .item .text {
+            flex: 1;
+        }
+        .card .details .item .button {
+            background-color: #5bc0de;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+            }
+            .card .content {
+                border-radius: 0;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            .card .details {
+                padding: 10px;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+            .card .details .item {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .card .details .item .button {
+                margin-top: 10px;
+                width: auto;
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
             const menu = document.querySelector('.navbar .menu');
             menu.classList.toggle('show');
         }
-  </script>
- </head>
- <body>
-  <div class="content">
-   <div class="navbar">
-    <div class="logo">
-     <img src="img/logo.png"/>
-     <a href="index.html" style="text-decoration: none;">
-      <span>
-       EUREKA
-      </span>
-     </a>
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo.png"/>
+                <a href="index.html" style="text-decoration: none;">
+                    <span>EUREKA</span>
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu">
+                <a href="cursos.html">Cursos</a>
+                <a href="recursos.html">Recursos</a>
+                <a href="foro.html">Foro</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contacto.html" class="contacto">Contacto</a>
+            </div>
+        </div>
+        <div class="header">
+            <h1>Biblioteca Digital de Recursos</h1>
+            <p>Accede a materiales de estudio para el CBC de la UBA. Aquí encontrarás guías y ejercicios organizados por materia.</p>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <h3>IPC</h3>
+                </div>
+                <div class="details">
+                    <div class="item">
+                        <i class="fas fa-book"></i>
+                        <div class="text">Material de lectura</div>
+                        <a href="#" class="button">Descargar PDF</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="text">Simulacro de Parcial</div>
+                        <a href="#" class="button">Descargar PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h3>Sociedad y Estado</h3>
+                </div>
+                <div class="details">
+                    <div class="item">
+                        <i class="fas fa-book"></i>
+                        <div class="text">Material de lectura</div>
+                        <a href="#" class="button">Descargar PDF</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="text">Simulacro de Parcial</div>
+                        <a href="#" class="button">Descargar PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h3>Matemática</h3>
+                </div>
+                <div class="details">
+                    <div class="item">
+                        <i class="fas fa-book"></i>
+                        <div class="text">Material de lectura</div>
+                        <a href="#" class="button">Descargar PDF</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="text">Simulacro de Parcial</div>
+                        <a href="#" class="button">Descargar PDF</a>
+                    </div>
+                    <div class="item">
+                        <i class="fas fa-pencil-alt"></i>
+                        <div class="text">Ejercicios prácticos</div>
+                        <a href="#" class="button">Descargar PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">
-     <i class="fas fa-bars">
-     </i>
-    </div>
-    <div class="menu">
-        <a href="cursos.html">
-         Cursos
-        </a>
-        <a href="recursos.html">
-         Recursos
-        </a>
-        <a href="foro.html">
-         Foro
-        </a>
-        <a href="faq.html">
-         FAQ
-        </a>
-        <a href="contacto.html" class="contacto">
-         Contacto
-        </a>
-    </div>
-   </div>
-  </div>
-  <footer>
-   <p>
-    Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12
-   </p>
-   <p>
-    Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024
-   </p>
-   <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
-  </footer>
- </body>
+    <footer>
+        <p>Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12</p>
+        <p>Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+        <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
+    </footer>
+</body>
 </html>

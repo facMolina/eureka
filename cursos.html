@@ -1,12 +1,10 @@
 <html>
- <head>
-  <title>
-   Eureka
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
-  <style>
-   html, body {
+<head>
+    <title>Eureka</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Della+Respira&family=Work+Sans:wght@700&family=Cinzel&display=swap" rel="stylesheet"/>
+    <style>
+        html, body {
             height: 100%;
             margin: 0;
             font-family: 'Work Sans', sans-serif;
@@ -123,56 +121,185 @@
                 display: none;
             }
         }
-  </style>
-  <script>
-   function toggleMenu() {
+        .header {
+            background: url('img/fondo.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+        .courses {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .course-card h2 {
+            background: url('img/fondo.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            margin: -20px -20px 20px;
+            position: relative;
+            text-align: left;
+        }
+        .course-card p {
+            text-align: left;
+            font-weight: 300;
+        }
+        .course-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .course-card ul li {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .course-card ul li i {
+            color: #4caf50;
+            margin-right: 10px;
+        }
+        .course-card .details {
+            margin: 20px 0;
+            font-size: 1em;
+            font-weight: 100;
+        }
+        .course-card .details p {
+            font-weight: 200;
+        }
+        .course-card .price {
+            font-size: 1.2em;
+            font-weight: 200;
+        }
+        .course-card .btn {
+            background-color: #6dc9dd;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .course-card.full-width {
+            width: 100%;
+            max-width: 900px;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
             const menu = document.querySelector('.navbar .menu');
             menu.classList.toggle('show');
         }
-  </script>
- </head>
- <body>
-  <div class="content">
-   <div class="navbar">
-    <div class="logo">
-     <img src="img/logo.png"/>
-     <a href="index.html" style="text-decoration: none;">
-      <span>
-       EUREKA
-      </span>
-     </a>
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo.png"/>
+                <a href="index.html" style="text-decoration: none;">
+                    <span>EUREKA</span>
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu">
+                <a href="cursos.html">Cursos</a>
+                <a href="recursos.html">Recursos</a>
+                <a href="foro.html">Foro</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contacto.html" class="contacto">Contacto</a>
+            </div>
+        </div>
+        <div class="header">
+            <h1>Explorá nuestros cursos</h1>
+            <p>Rendí cualquier materia que te propongas con nuestros cursos.</p>
+        </div>
+        <div class="courses">
+            <div class="course-card">
+                <h2>IPC</h2>
+                <p>Dirigido a estudiantes que desean cursar el CBC de UBA (Universidad de Buenos Aires). El curso incluye la preparación completa de la materia de Introducción al Pensamiento Crítico.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Videos explicativos de toda la materia</li>
+                    <li><i class="fas fa-check-circle"></i>Ejercicios con solución</li>
+                    <li><i class="fas fa-check-circle"></i>Modelos de examen</li>
+                </ul>
+                <div class="details">
+                    <p class="duration">Duración: 6 meses</p>
+                    <p class="price">Precio: $21.000</p>
+                </div>
+                <a href="#" class="btn">Comprar</a>
+            </div>
+            <div class="course-card">
+                <h2>Matemática</h2>
+                <p>Dirigido a estudiantes que desean cursar el CBC de UBA (Universidad de Buenos Aires). El curso incluye la preparación completa de la materia de Matemática.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Videos explicativos de toda la materia</li>
+                    <li><i class="fas fa-check-circle"></i>Ejercicios con solución</li>
+                    <li><i class="fas fa-check-circle"></i>Modelos de examen</li>
+                </ul>
+                <div class="details">
+                    <p class="duration">Duración: 6 meses</p>
+                    <p class="price">Precio: $21.000</p>
+                </div>
+                <a href="#" class="btn">Comprar</a>
+            </div>
+            <div class="course-card">
+                <h2>Sociedad y Estado</h2>
+                <p>Dirigido a estudiantes que desean cursar el CBC de UBA (Universidad de Buenos Aires). El curso incluye la preparación completa de la materia de Sociedad y Estado.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Videos explicativos de toda la materia</li>
+                    <li><i class="fas fa-check-circle"></i>Ejercicios con solución</li>
+                    <li><i class="fas fa-check-circle"></i>Modelos de examen</li>
+                </ul>
+                <div class="details">
+                    <p class="duration">Duración: 6 meses</p>
+                    <p class="price">Precio: $21.000</p>
+                </div>
+                <a href="#" class="btn">Comprar</a>
+            </div>
+            <div class="course-card full-width">
+                <h2>Pack CBC</h2>
+                <p>Dirigido a estudiantes que desean cursar el CBC de UBA (Universidad de Buenos Aires). El curso incluye la preparación completa de las materias de: IPC, Matemática y Sociedad y Estado.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Apuntes completos actualizados</li>
+                    <li><i class="fas fa-check-circle"></i>Videos explicativos de todo el contenido</li>
+                    <li><i class="fas fa-check-circle"></i>Autoevaluación multiple choice</li>
+                </ul>
+                <div class="details">
+                    <p class="duration">Duración: 12 meses</p>
+                    <p class="price">Precio: $51.000</p>
+                </div>
+                <a href="#" class="btn">Comprar</a>
+            </div>
+        </div>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">
-     <i class="fas fa-bars">
-     </i>
-    </div>
-    <div class="menu">
-        <a href="cursos.html">
-        Cursos
-        </a>
-        <a href="recursos.html">
-        Recursos
-        </a>
-        <a href="foro.html">
-        Foro
-        </a>
-        <a href="faq.html">
-        FAQ
-        </a>
-        <a href="contacto.html" class="contacto">
-        Contacto
-        </a>
-    </div>
-   </div>
-  </div>
-  <footer>
-   <p>
-    Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12
-   </p>
-   <p>
-    Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024
-   </p>
-   <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
-  </footer>
- </body>
+    <footer>
+        <p>Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12</p>
+        <p>Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+        <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
+    </footer>
+</body>
 </html>
