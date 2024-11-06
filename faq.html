@@ -90,6 +90,75 @@
             width: 100px;
             height: 100%;
         }
+        .header {
+            background: url('img/fondo.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+            font-weight: 300;
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .faq-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item h3 {
+            font-size: 18px;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .faq-item p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #666;
+            font-weight: 400;
+            display: none;
+        }
+        .faq-footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .faq-footer h2 {
+            font-size: 28px;
+            color: #294e7a;
+            font-weight: 700;
+        }
+        .faq-footer button {
+            background-color: #00c0ff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        .faq-footer button:hover {
+            background-color: #00a0d1;
+        }
         
         @media (max-width: 768px) {
             .navbar {
@@ -130,6 +199,26 @@
             menu.classList.toggle('show');
         }
   </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var faqItems = document.querySelectorAll('.faq-item h3');
+            faqItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    var content = this.nextElementSibling;
+                    var icon = this.querySelector('i');
+                    if (content.style.display === 'none' || content.style.display === '') {
+                        content.style.display = 'block';
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        content.style.display = 'none';
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
  </head>
  <body>
   <div class="content">
@@ -164,6 +253,34 @@
         </a>
     </div>
    </div>
+   <div class="header">
+    <h1>Preguntas frecuentes</h1>
+    <p>Respuestas rápidas y claras a las preguntas que más nos hacen. En caso que no encuentres la tuya, ¡escribinos!</p>
+    </div>
+    <div class="faq-container">
+        <div class="faq-item">
+            <h3>¿Qué pasa si tengo dudas o necesito ayuda adicional con los temas? <i class="fas fa-chevron-down"></i></h3>
+            <p>Aunque las clases son en video, ofrecemos soporte adicional para resolver tus dudas. Puedes enviarnos tus preguntas por correo o acceder a tutorías virtuales grupales, donde un profesor te ayudará con los temas que te resulten más difíciles.</p>
+        </div>
+        <div class="faq-item">
+            <h3>¿El precio es mensual? <i class="fas fa-chevron-down"></i></h3>
+            <p>No, el precio de los paquetes corresponde a la totalidad de los servicios, se abona una única vez.</p>
+        </div>
+        <div class="faq-item">
+            <h3>¿Incluyen los cursos simulacros de examen? <i class="fas fa-chevron-down"></i></h3>
+            <p>Si, cada curso incluye simulacros de examen para cada una de las tres materias: Matemática, IPC y Sociedad y Estado. Estos simulacros están diseñados para replicar las condiciones del examen real del CBC, lo que te ayudará a familiarizarte con el tipo de preguntas y a practicar bajo presión.</p>
+        </div>
+        <div class="faq-item">
+            <h3>¿Cómo funcionan las clases? ¿Son en vivo o grabadas? <i class="fas fa-chevron-down"></i></h3>
+            <p>Nuestras clases son videos pregrabados para que puedas estudiar a tu ritmo y en el horario que te resulte más conveniente. Los videos están organizados por unidades temáticas y acompañados de material de apoyo y ejercicios para practicar.</p>
+        </div>
+        <div class="faq-footer">
+            <h2>¿No encontraste tu pregunta?</h2>
+            <a href="contacto.html">
+                <button>Contáctanos</button>
+            </a>
+        </div>
+    </div>
   </div>
   <footer>
    <p>

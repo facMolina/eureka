@@ -1,12 +1,10 @@
 <html>
- <head>
-  <title>
-   Eureka
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
-  <style>
-   html, body {
+<head>
+    <title>Eureka</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Della+Respira&family=Work+Sans:wght@700&family=Cinzel&display=swap" rel="stylesheet"/>
+    <style>
+        html, body {
             height: 100%;
             margin: 0;
             font-family: 'Work Sans', sans-serif;
@@ -90,6 +88,103 @@
             width: 100px;
             height: 100%;
         }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .comment-form {
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .comment-form .form-group {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .comment-form label {
+            margin-right: 10px;
+            font-weight: bold;
+            min-width: 150px;
+        }
+        .comment-form input, .comment-form textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .comment-form .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        .comment-form button {
+            background-color: #6dc9dd;
+            color: #fff;
+            padding: 10px 20px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px; 
+        }
+        .comment-form button:hover {
+            background-color: #009acd;
+        }
+        .comment-box {
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .comment-box .img-container {
+            background-color: #6dc9dd;
+            display: inline-block;
+            padding: 5px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .comment-box img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .comment-box .comment-content {
+            flex: 1;
+        }
+        .comment-box .comment-content h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .comment-box .comment-content p {
+            margin: 10px 0 0;
+            font-size: 14px;
+        }
+        .header {
+            background: url('img/fondo.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+            font-weight: 300;
+        }
         
         @media (max-width: 768px) {
             .navbar {
@@ -123,56 +218,94 @@
                 display: none;
             }
         }
-  </style>
-  <script>
-   function toggleMenu() {
+    </style>
+    <script>
+        function toggleMenu() {
             const menu = document.querySelector('.navbar .menu');
             menu.classList.toggle('show');
         }
-  </script>
- </head>
- <body>
-  <div class="content">
-   <div class="navbar">
-    <div class="logo">
-     <img src="img/logo.png"/>
-     <a href="index.html" style="text-decoration: none;">
-      <span>
-       EUREKA
-      </span>
-     </a>
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo.png"/>
+                <a href="index.html" style="text-decoration: none;">
+                    <span>EUREKA</span>
+                </a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu">
+                <a href="cursos.html">Cursos</a>
+                <a href="recursos.html">Recursos</a>
+                <a href="foro.html">Foro</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contacto.html" class="contacto">Contacto</a>
+            </div>
+        </div>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">
-     <i class="fas fa-bars">
-     </i>
+    <div class="header">
+        <h1>Foro de estudiantes</h1>
+        <p>Contacte con otros estudiantes de Eureka!</p>
     </div>
-    <div class="menu">
-        <a href="cursos.html">
-         Cursos
-        </a>
-        <a href="recursos.html">
-         Recursos
-        </a>
-        <a href="foro.html">
-         Foro
-        </a>
-        <a href="faq.html">
-         FAQ
-        </a>
-        <a href="contacto.html" class="contacto">
-         Contacto
-        </a>
+    <div class="container">
+        <div class="comment-form">
+            <div class="form-group">
+                <label for="name">Nombre y apellido:</label>
+                <input id="name" type="text"/>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comentario:</label>
+                <textarea id="comment"></textarea>
+            </div>
+            <div class="button-container">
+                <button>Publicar</button>
+            </div>
+        </div>
+        <div class="comment-box">
+            <div class="img-container">
+                <img alt="Icono de usuario" height="50" src="img/estudiante.png" width="50"/>
+            </div>
+            <div class="comment-content">
+                <h3>Juan Pérez</h3>
+                <p>¡Hola! Yo tomé un curso en Eureka y me fue excelente. Los profesores son súper claros y te dan muchos tips específicos para el examen de ingreso. Además, el material que te entregan está muy bien organizado y se ajusta a lo que te van a preguntar en el examen. ¡Aprobé a la primera! Lo recomiendo mucho si estás buscando prepararte seriamente.</p>
+            </div>
+        </div>
+        <div class="comment-box">
+            <div class="img-container">
+                <img alt="Icono de usuario" height="50" src="img/estudiante.png" width="50"/>
+            </div>
+            <div class="comment-content">
+                <h3>María Gonzalez</h3>
+                <p>Yo también estaba bastante nerviosa por los exámenes de ingreso, pero después de hacer el curso acá, me sentí mucho más segura. Los simulacros que hacen son muy parecidos al examen real, y eso te ayuda un montón a practicar bajo presión. Al final, logré entrar a la universidad que quería gracias a la preparación que recibí en Eureka. ¡Súper recomendable!</p>
+            </div>
+        </div>
+        <div class="comment-box">
+            <div class="img-container">
+                <img alt="Icono de usuario" height="50" src="img/estudiante.png" width="50"/>
+            </div>
+            <div class="comment-content">
+                <h3>Luis Gómez</h3>
+                <p>¡Hola! Yo tenía muchas dudas sobre cómo prepararme para el examen de ingreso, pero en Eureka me orientaron desde el primer día. Te explican todo paso a paso y hasta te arman un plan de estudio personalizado según tus necesidades. Los profes son muy atentos, y siempre están dispuestos a ayudarte cuando te trabas en algo. Aprobé el examen con más confianza de la que pensaba. ¡Suerte a todos!</p>
+            </div>
+        </div>
+        <div class="comment-box">
+            <div class="img-container">
+                <img alt="Icono de usuario" height="50" src="img/estudiante.png" width="50"/>
+            </div>
+            <div class="comment-content">
+                <h3>Abril Paz</h3>
+                <p>Hice el curso regular en Eureka, y me sirvió muchísimo. Tenía muchas dificultades con las materias más técnicas, pero los profesores explican con paciencia y se aseguran de que entiendas bien los conceptos. Además, te dan ejercicios extra para que practiques por tu cuenta. Gracias a ellos, pude mejorar en los temas donde más flojeaba y aprobé mi examen de ingreso sin problemas.</p>
+            </div>
+        </div>
     </div>
-   </div>
-  </div>
-  <footer>
-   <p>
-    Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12
-   </p>
-   <p>
-    Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024
-   </p>
-   <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
-  </footer>
- </body>
+    <footer>
+        <p>Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12</p>
+        <p>Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+        <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
+    </footer>
+</body>
 </html>
