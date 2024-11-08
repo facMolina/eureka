@@ -1,12 +1,11 @@
+<!DOCTYPE html>
 <html>
- <head>
-  <title>
-   Eureka
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
-  <style>
-   html, body {
+<head>
+    <title>Eureka</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Della+Respira&family=Work+Sans:wght@700&family=Cinzel&display=swap" rel="stylesheet"/>
+    <style>
+        html, body {
             height: 100%;
             margin: 0;
             font-family: 'Work Sans', sans-serif;
@@ -107,14 +106,17 @@
         }
         .hero .image img {
             max-width: 100%;
-            height: auto;
+            height: 500px;
             margin-bottom: 0;
             position: absolute; 
-            bottom: 0; 
+            bottom: 1px; 
             right: 0; 
+            margin-right: 40px;
         }
         footer {
-            position: relative;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
             text-align: center;
             font-size: 12px;
             padding: 10px 0;
@@ -134,29 +136,23 @@
         }
         .container {
             display: flex;
-            justify-content: center;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            flex-wrap: wrap;
         }
         .contact-info {
-            margin-right: 50px;
+            margin-left: 300px;
+            margin-right: 10px;
             flex: 1;
+            margin-top: 100px;
         }
         .contact-info div {
             display: flex;
-            flex-direction: column;
+            align-items: flex-start;
             margin-bottom: 20px;
         }
-
-        .contact-info div .info-header {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info div .info-header i {
+        .contact-info div i {
             font-size: 24px;
             color: #fff;
             background-color: #00a9ce;
@@ -164,27 +160,25 @@
             padding: 10px;
             margin-right: 10px;
         }
-
-        .contact-info div .info-header span {
+        .contact-info div .info-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-info div .info-text span {
             font-size: 18px;
             font-weight: bold;
+            margin-bottom: 5px;
         }
-
-        .contact-info div .info-text {
-            display: block;
-            margin-left: 34px; 
-        }
-
         .contact-info div .info-text p {
             margin: 0;
-            font-size: 14px; 
-            font-weight: normal; 
+            font-size: 16px;
         }
         .contact-form {
             max-width: 400px;
             width: 100%;
             flex: 1;
             margin: 0 auto;
+            margin-right: 300px;
         }
         .contact-form h2 {
             font-size: 24px;
@@ -277,123 +271,114 @@
             .contact-info {
                 margin-right: 0;
                 margin-bottom: 20px;
+                margin-left:-50px;
+            }
+            .contact-info div {
+                flex-direction: column;
+                align-items: flex-start;
+                align-items: center;
+            }
+            .contact-info div .info-header {
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            .contact-info div .info-text {
+                margin-left: 0;
+            }
+            .contact-form {
+                margin-left: 300px;
+            }
+            .contact-form button {
+                margin-left: 150px;
+            }
+            footer {
+                position: relative;
             }
             footer img {
                 display: none;
             }
         }
-  </style>
-  <script>
-   function toggleMenu() {
+    </style>
+    <script>
+        function toggleMenu() {
             const menu = document.querySelector('.navbar .menu');
             menu.classList.toggle('show');
         }
-  </script>
- </head>
- <body>
-  <div class="content">
-   <div class="navbar">
-    <div class="logo">
-     <img src="img/logo.png"/>
-     <a href="index.html" style="text-decoration: none;">
-      <span>
-       EUREKA
-      </span>
-     </a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-     <i class="fas fa-bars">
-     </i>
-    </div>
-    <div class="menu">
-     <a href="cursos.html">
-      Cursos
-     </a>
-     <a href="recursos.html">
-      Recursos
-     </a>
-     <a href="foro.html">
-      Foro
-     </a>
-     <a href="faq.html">
-      FAQ
-     </a>
-     <a href="contacto.html" class="contacto">
-      Contacto
-     </a>
-    </div>
-   </div>
-   <div class="hero">
-    <div class="text">
-     <h2 class="subheading">
-      INSTITUTO DE APOYO UNIVERSITARIO
-     </h2>
-     <h1>
-        Comunicate con
-      <br/>
-      nosotros
-     </h1>
-     <h2>
-        Si tenés alguna duda o necesitas información, completá 
-        el formulario de esta página o envianos un correo 
-        a info@institutoeureka.com.ar y te respondemos a la brevedad.
-     </h2>
-    </div>
-    <div class="image">
-     <img alt="Estudiante" src="img/alumno.png"/>
-    </div>
-   </div>
-   <div class="container">
-    <div class="contact-info">
-        <div>
-            <div class="info-header">
-                <i class="fas fa-phone"></i>
-                <span>Teléfono</span>
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo.png"/>
+                <a href="index.html" style="text-decoration: none;">
+                    <span>EUREKA</span>
+                </a>
             </div>
-            <div class="info-text">
-                <p>11 4009-3333</p>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu">
+                <a href="cursos.html">Cursos</a>
+                <a href="recursos.html">Recursos</a>
+                <a href="login.html">Foro</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contacto.html" class="contacto">Contacto</a>
             </div>
         </div>
-        <div>
-            <div class="info-header">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
+        <div class="hero">
+            <div class="text">
+                <h2 class="subheading">INSTITUTO DE APOYO UNIVERSITARIO</h2>
+                <h1>Comunicate con<br/>nosotros</h1>
+                <h2>Si tenés alguna duda o necesitas información, completá el formulario de esta página o envianos un correo a info@institutoeureka.com.ar y te respondemos a la brevedad.</h2>
             </div>
-            <div class="info-text">
-                <p>info@institutoeureka.com.ar</p>
-            </div>
-        </div>
-        <div>
-            <div class="info-header">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Ubicación</span>
-            </div>
-            <div class="info-text">
-                <p>Dr. Victorino de la Plaza 1801, CABA</p>
+            <div class="image">
+                <img alt="Estudiante" src="img/alumno.png"/>
             </div>
         </div>
+        <div class="container">
+            <div class="contact-info">
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <div class="info-text">
+                        <span>Teléfono</span>
+                        <p>11 4009-3333</p>
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-text">
+                        <span>Email</span>
+                        <p>info@institutoeureka.com.ar</p>
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-text">
+                        <span>Ubicación</span>
+                        <p>Dr. Victorino de la Plaza 1801, CABA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h2>Dejanos tu consulta</h2>
+                <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <label for="name">Nombre y apellido <span style="color: red;">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email <span style="color: red;">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Mensaje <span style="color: red;">*</span></label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p>Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12</p>
+            <p>Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+            <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
+        </footer>
     </div>
-    <div class="contact-form">
-        <h2>Dejanos tu consulta</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-            <label for="name">Nombre y apellido <span style="color: red;">*</span></label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email <span style="color: red;">*</span></label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Mensaje <span style="color: red;">*</span></label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-  </div>
-  <footer>
-   <p>
-    Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12
-   </p>
-   <p>
-    Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024
-   </p>
-   <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
-  </footer>
- </body>
+</body>
 </html>
