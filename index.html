@@ -292,13 +292,67 @@
                 display: none;
             }
         }
-  </style>
-  <script>
-   function toggleMenu() {
-            const menu = document.querySelector('.navbar .menu');
-            menu.classList.toggle('show');
+        .focus-visible {
+            outline: 2px solid #0056b3;
+            outline-offset: 2px;
         }
-  </script>
+  </style>
+<script>
+    // Navegación accesible
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Tab') {
+            document.body.classList.add('user-is-tabbing');
+        }
+    });
+
+    document.addEventListener('mousedown', function() {
+        document.body.classList.remove('user-is-tabbing');
+    });
+
+    // Enfoque visible
+    $(document).on('focusin', function(e) {
+        $(e.target).addClass('focus-visible');
+    });
+
+    $(document).on('focusout', function(e) {
+        $(e.target).removeClass('focus-visible');
+    });
+
+    // Desplazamiento suave
+    $('a[href*="#"]').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function() {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    // Mensajes de alerta accesibles
+    function showAlert(message) {
+        const alertBox = document.createElement('div');
+        alertBox.setAttribute('role', 'alert');
+        alertBox.setAttribute('aria-live', 'assertive');
+        alertBox.classList.add('alert');
+        alertBox.textContent = message;
+        document.body.appendChild(alertBox);
+        setTimeout(() => {
+            alertBox.remove();
+        }, 3000);
+    }
+
+    // Ejemplo de uso de showAlert
+    // showAlert('Este es un mensaje de alerta accesible.');
+
+    // Función para mostrar/ocultar el menú
+    function toggleMenu() {
+        const menu = document.querySelector('.navbar .menu');
+        menu.classList.toggle('show');
+    }
+</script>
  </head>
  <body>
   <div class="content">
