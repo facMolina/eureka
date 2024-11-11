@@ -358,82 +358,118 @@
        </footer>
     </body>
     <script>
-        const publishButton = document.getElementById('publishButton');
-        const postContainer = document.getElementById('postContainer');
+        document.addEventListener('DOMContentLoaded', function() {
+            const publishButton = document.getElementById('publishButton');
+            const postContainer = document.getElementById('postContainer');
     
-        publishButton.addEventListener('click', function() {
-            const name = document.getElementById('name').value.trim();
-            const comment = document.getElementById('comment').value.trim();
+            // Cargar comentarios desde localStorage
+            loadComments();
     
-            if (name && comment) {
-                const newPost = createCommentElement(name, comment);
-                postContainer.appendChild(newPost);
+            publishButton.addEventListener('click', function() {
+                const name = document.getElementById('name').value.trim();
+                const comment = document.getElementById('comment').value.trim();
     
-                document.getElementById('name').value = '';
-                document.getElementById('comment').value = '';
-            } else {
-                alert('Por favor ingresa tu nombre y comentario.');
-            }
-        });
+                if (name && comment) {
+                    const newPost = createCommentElement(name, comment);
+                    postContainer.appendChild(newPost);
     
-        function createCommentElement(name, text) {
-            const commentBox = document.createElement('div');
-            commentBox.classList.add('comment-box');
+                    saveComment(name, comment);
     
-            commentBox.innerHTML = `
-                <div class="img-container">
-                    <img src="img/estudiante.png" alt="Icono de usuario" width="50" height="50"/>
-                </div>
-                <div class="comment-content">
-                    <h3>${name}</h3>
-                    <p>${text}</p>
-                    <button class="reply-button">Responder</button>
-                    <div class="replies"></div> <!-- Contenedor de sub-comentarios -->
-                </div>
-            `;
-    
-            const replyButton = commentBox.querySelector('.reply-button');
-            replyButton.addEventListener('click', function() {
-                addReplyForm(commentBox);
-            });
-    
-            return commentBox;
-        }
-    
-        function addReplyForm(commentBox) {
-            if (commentBox.querySelector('.reply-form')) return;
-    
-            const replyForm = document.createElement('div');
-            replyForm.classList.add('reply-form');
-            replyForm.innerHTML = `
-                <div class="form-group">
-                    <input type="text" placeholder="Tu nombre" class="reply-name"/>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Tu comentario" class="reply-comment"></textarea>
-                </div>
-                <div class="button-container">
-                    <button class="reply-submit">Publicar Respuesta</button>
-                </div>
-            `;
-    
-            commentBox.querySelector('.comment-content').appendChild(replyForm);
-    
-            const replySubmitButton = replyForm.querySelector('.reply-submit');
-            replySubmitButton.addEventListener('click', function() {
-                const replyName = replyForm.querySelector('.reply-name').value.trim();
-                const replyText = replyForm.querySelector('.reply-comment').value.trim();
-    
-                if (replyName && replyText) {
-                    const replyElement = createCommentElement(replyName, replyText);
-                    commentBox.querySelector('.replies').appendChild(replyElement);
-    
-                    replyForm.remove();
+                    document.getElementById('name').value = '';
+                    document.getElementById('comment').value = '';
                 } else {
-                    alert('Por favor ingresa tu nombre y comentario de respuesta.');
+                    alert('Por favor ingresa tu nombre y comentario.');
                 }
             });
-        }
+    
+            function createCommentElement(name, text) {
+                const commentBox = document.createElement('div');
+                commentBox.classList.add('comment-box');
+    
+                commentBox.innerHTML = `
+                    <div class="img-container">
+                        <img src="img/estudiante.png" alt="Icono de usuario" width="50" height="50"/>
+                    </div>
+                    <div class="comment-content">
+                        <h3>${name}</h3>
+                        <p>${text}</p>
+                        <button class="reply-button">Responder</button>
+                        <div class="replies"></div> <!-- Contenedor de sub-comentarios -->
+                    </div>
+                `;
+    
+                const replyButton = commentBox.querySelector('.reply-button');
+                replyButton.addEventListener('click', function() {
+                    addReplyForm(commentBox);
+                });
+    
+                return commentBox;
+            }
+    
+            function addReplyForm(commentBox) {
+                if (commentBox.querySelector('.reply-form')) return;
+    
+                const replyForm = document.createElement('div');
+                replyForm.classList.add('reply-form');
+                replyForm.innerHTML = `
+                    <div class="form-group">
+                        <input type="text" placeholder="Tu nombre" class="reply-name"/>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tu comentario" class="reply-comment"></textarea>
+                    </div>
+                    <div class="button-container">
+                        <button class="reply-submit">Publicar Respuesta</button>
+                    </div>
+                `;
+    
+                commentBox.querySelector('.comment-content').appendChild(replyForm);
+    
+                const replySubmitButton = replyForm.querySelector('.reply-submit');
+                replySubmitButton.addEventListener('click', function() {
+                    const replyName = replyForm.querySelector('.reply-name').value.trim();
+                    const replyText = replyForm.querySelector('.reply-comment').value.trim();
+    
+                    if (replyName && replyText) {
+                        const replyElement = createCommentElement(replyName, replyText);
+                        commentBox.querySelector('.replies').appendChild(replyElement);
+    
+                        saveReply(commentBox, replyName, replyText);
+    
+                        replyForm.remove();
+                    } else {
+                        alert('Por favor ingresa tu nombre y comentario de respuesta.');
+                    }
+                });
+            }
+    
+            function saveComment(name, comment) {
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+                comments.push({ name, comment, replies: [] });
+                localStorage.setItem('comments', JSON.stringify(comments));
+            }
+    
+            function saveReply(commentBox, replyName, replyText) {
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+                const commentIndex = Array.from(postContainer.children).indexOf(commentBox);
+                if (commentIndex > -1) {
+                    comments[commentIndex].replies.push({ name: replyName, comment: replyText });
+                    localStorage.setItem('comments', JSON.stringify(comments));
+                }
+            }
+    
+            function loadComments() {
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+                comments.forEach(comment => {
+                    const commentBox = createCommentElement(comment.name, comment.comment);
+                    postContainer.appendChild(commentBox);
+                    comment.replies.forEach(reply => {
+                        const replyElement = createCommentElement(reply.name, reply.comment);
+                        commentBox.querySelector('.replies').appendChild(replyElement);
+                    });
+                });
+            }
+        });
     </script>
     
 </html>
