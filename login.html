@@ -1,284 +1,363 @@
 <html>
- <head>
-  <title>
-   Eureka
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
-  <style>
-   html, body {
-        height: 100%;
-        margin: 0;
-        font-family: 'Work Sans', sans-serif;
-        display: flex;
-        flex-direction: column;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        .content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .navbar {
-            font-family: 'Work Sans', sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: white;
-        }
-        .navbar .logo {
-            display: flex;
-            align-items: center;
-        }
-        .navbar .logo i {
-            font-size: 20px;
-            margin-right: 10px;
-        }
-        .navbar .logo span {
-            font-family: 'Cinzel', serif;
-            font-size: 30px;
-            font-weight: bold;
-            color: #282c30;
-        }
-        .navbar .menu {
-            display: flex;
-            gap: 20px;
-            cursor: pointer; 
-            text-decoration: none; 
-            align-items: center;
-        }
-        .navbar .menu a {
-            text-decoration: none;
-            color: black;
-            font-family: 'Work Sans', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-        }
-        .navbar .menu a.contacto {
-            color: white;
-            background-color: #6dc9dd;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-        .navbar .hamburger {
-            display: none;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .navbar .logo img {
-            height: 55px; 
-            width: auto;
-            margin-right: 10px;
-        }
-        footer {
-            position: relative;
-            text-align: center;
-            font-size: 12px;
-            padding: 10px 0;
-            background-color: rgba(109, 201, 221, 0.255);
-        }
-        footer p {
-            margin: 5px 0;
-            color: rgb(0, 0, 0);
-            opacity: 1;
-        }
-        footer img {
-            position: absolute;
-            right: 20px;
-            bottom: 10px;
-            width: 100px;
-            height: 100%;
-        }
-        .image {
-            flex: 1.2;
-            background: url('img/estudiante-login.png') no-repeat center center;
-            background-size: cover;
-            border-top-right-radius: 40px;
-            border-bottom-right-radius: 40px;
-            position: sticky;
-            top: 0;
-        }
-        .form-container {
-            flex: 1;
-            padding: 40px;
-        }
-        .form-container h2 {
-            color: #294e7a;
-            margin-bottom: 20px;
-            font-weight: 700;
-            font-size: 28px;
-        }
-        .form-container label {
-            display: block;
-            margin-bottom: 5px;
-            color: #000000;
-            font-weight: 400;
-        }
-        .form-container input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: 'Work Sans', sans-serif;
-        }
-        .form-container input[type="submit"] {
-            background-color: #6dc9dd;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-family: 'Work Sans', sans-serif;
-            display: block;
-            margin: 0 auto;
-            font-weight: 700;
-            border-radius: 20px;
-            font-size: 16px;
-            padding: 10px 20px;
-            width: auto;
-        }
-        .form-container input[type="submit"]:hover {
-            background-color: #31b0d5;
-        }
-        .form-container .divider {
-            border-top: 1px solid #ccc;
-            margin: 20px 0;
-        }
-        .container {
-            display: flex;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 100%;
-            max-width: 100%;
-            margin: auto; 
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 10px 20px;
-            }
-            .navbar .menu {
-            display: none;
-            flex-direction: column;
-            width: 100%;
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            }
-            .navbar .menu a {
-            margin: 10px 0;
-            width: 100%;
-            text-align: left;
-            }
-            .navbar .hamburger {
-            display: block;
-            font-size: 20px;
-            cursor: pointer;
-            align-self: flex-end;
-            }
-            .navbar .menu.show {
-            display: flex;
-            }
-            .image {
-            display: none;
-            }
-            footer img {
-            display: none;
-            }
-        }
-  </style>
-  <script>
-   function toggleMenu() {
-            const menu = document.querySelector('.navbar .menu');
-            menu.classList.toggle('show');
-        }
+  <head>
+    <title>Eureka</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;family=Della+Respira&amp;family=Work+Sans:wght@700&amp;family=Cinzel&amp;display=swap" rel="stylesheet"/>
+    <style>
+        html, body {
+             height: 100%;
+             margin: 0;
+             font-family: 'Work Sans', sans-serif;
+             display: flex;
+             flex-direction: column;
+             }
+             body {
+                 display: flex;
+                 flex-direction: column;
+             }
+             .content {
+                 flex: 1;
+                 display: flex;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: center;
+             }
+             .navbar {
+                 font-family: 'Work Sans', sans-serif;
+                 margin: 0;
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
+                 padding: 20px 40px;
+                 background-color: white;
+             }
+             .navbar .logo {
+                 display: flex;
+                 align-items: center;
+             }
+             .navbar .logo i {
+                 font-size: 20px;
+                 margin-right: 10px;
+             }
+             .navbar .logo span {
+                 font-family: 'Cinzel', serif;
+                 font-size: 30px;
+                 font-weight: bold;
+                 color: #282c30;
+             }
+             .navbar .menu {
+                 display: flex;
+                 gap: 20px;
+                 cursor: pointer; 
+                 text-decoration: none; 
+                 align-items: center;
+             }
+             .navbar .menu a {
+                 text-decoration: none;
+                 color: black;
+                 font-family: 'Work Sans', sans-serif;
+                 font-size: 20px;
+                 font-weight: 700;
+             }
+             .navbar .menu a.contacto {
+                 color: white;
+                 background-color: #6dc9dd;
+                 padding: 10px 20px;
+                 border-radius: 10px;
+             }
+             .navbar .hamburger {
+                 display: none;
+                 font-size: 20px;
+                 cursor: pointer;
+             }
+             .navbar .logo img {
+                 height: 55px; 
+                 width: auto;
+                 margin-right: 10px;
+             }
+             footer {
+                 position: relative;
+                 text-align: center;
+                 font-size: 12px;
+                 padding: 10px 0;
+                 background-color: rgba(109, 201, 221, 0.255);
+             }
+             footer p {
+                 margin: 5px 0;
+                 color: rgb(0, 0, 0);
+                 opacity: 1;
+             }
+             footer img {
+                 position: absolute;
+                 right: 20px;
+                 bottom: 10px;
+                 width: 100px;
+                 height: 100%;
+             }
+             .image {
+                 flex: 1.2;
+                 background: url('img/estudiante-login.png') no-repeat center center;
+                 background-size: cover;
+                 border-top-right-radius: 40px;
+                 border-bottom-right-radius: 40px;
+                 position: sticky;
+                 top: 0;
+             }
+             .form-container {
+                 flex: 1;
+                 padding: 40px;
+             }
+             .form-container h2 {
+                 color: #294e7a;
+                 margin-bottom: 20px;
+                 font-weight: 700;
+                 font-size: 28px;
+             }
+             .form-container label {
+                 display: block;
+                 margin-bottom: 5px;
+                 color: #000000;
+                 font-weight: 400;
+             }
+             .form-container input {
+                 width: 100%;
+                 padding: 10px;
+                 margin-bottom: 20px;
+                 border: 1px solid #ccc;
+                 border-radius: 5px;
+                 font-family: 'Work Sans', sans-serif;
+             }
+             .form-container input[type="submit"] {
+                 background-color: #6dc9dd;
+                 color: white;
+                 border: none;
+                 cursor: pointer;
+                 transition: background-color 0.3s;
+                 font-family: 'Work Sans', sans-serif;
+                 display: block;
+                 margin: 0 auto;
+                 font-weight: 700;
+                 border-radius: 20px;
+                 font-size: 16px;
+                 padding: 10px 20px;
+                 width: auto;
+             }
+             .form-container input[type="submit"]:hover {
+                 background-color: #31b0d5;
+             }
+             .form-container .divider {
+                 border-top: 1px solid #ccc;
+                 margin: 20px 0;
+             }
+             .container {
+                 display: flex;
+                 background-color: white;
+                 border-radius: 10px;
+                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                 overflow: hidden;
+                 width: 100%;
+                 max-width: 100%;
+                 margin: auto; 
+             }
+             
+             @media (max-width: 768px) {
+                 .navbar {
+                 flex-direction: column;
+                 align-items: flex-start;
+                 padding: 10px 20px;
+                 }
+                 .navbar .menu {
+                 display: none;
+                 flex-direction: column;
+                 width: 100%;
+                 background-color: white;
+                 border: 1px solid #ccc;
+                 padding: 10px;
+                 }
+                 .navbar .menu a {
+                 margin: 10px 0;
+                 width: 100%;
+                 text-align: left;
+                 }
+                 .navbar .hamburger {
+                 display: block;
+                 font-size: 20px;
+                 cursor: pointer;
+                 align-self: flex-end;
+                 }
+                 .navbar .menu.show {
+                 display: flex;
+                 }
+                 .image {
+                 display: none;
+                 }
+                 footer img {
+                 display: none;
+                 }
+             }
+       </style>
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector('.navbar .menu');
+        menu.classList.toggle('show');
+      }
+
+   
+      function validateLoginForm(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+
+    let valid = true;
+
+    emailError.textContent = '';
+    passwordError.textContent = '';
+
+    if (!email || !validateEmail(email)) {
+      emailError.textContent = 'Por favor, ingresa un correo electrónico válido.';
+      valid = false;
+    }
+
+    if (!password || password.length < 6) {
+      passwordError.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+      valid = false;
+    }
+
+    if (valid) {
+      const registeredEmail = localStorage.getItem('registeredEmail');
+      const registeredPassword = localStorage.getItem('registeredPassword');
+
+      if (email === registeredEmail && password === registeredPassword) {
+        window.location.href = 'foro.html';
+      } else {
+        alert('Correo electrónico o contraseña incorrectos.');
+      }
+    }
+  }
+
+  function validateEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  }
+
+  function validateRegisterForm(event) {
+    event.preventDefault();
+
+    const registerEmail = document.getElementById('register-email').value;
+    const registerPassword = document.getElementById('register-password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+    const registerEmailError = document.getElementById('register-email-error');
+    const registerPasswordError = document.getElementById('register-password-error');
+    const confirmPasswordError = document.getElementById('confirm-password-error');
+
+    let valid = true;
+
+    registerEmailError.textContent = '';
+    registerPasswordError.textContent = '';
+    confirmPasswordError.textContent = '';
+
+    if (!registerEmail || !validateEmail(registerEmail)) {
+      registerEmailError.textContent = 'Por favor, ingresa un correo electrónico válido.';
+      valid = false;
+    }
+
+    if (!registerPassword || registerPassword.length < 6) {
+      registerPasswordError.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+      valid = false;
+    }
+
+    if (registerPassword !== confirmPassword) {
+      confirmPasswordError.textContent = 'Las contraseñas no coinciden.';
+      valid = false;
+    }
+
+    if (valid) {
+      localStorage.setItem('registeredEmail', registerEmail);
+      localStorage.setItem('registeredPassword', registerPassword);
+      alert('Registro exitoso');
+      window.location.href = 'login.html';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+
+    if (loginForm) {
+      loginForm.addEventListener('submit', validateLoginForm);
+    }
+
+    if (registerForm) {
+      registerForm.addEventListener('submit', validateRegisterForm);
+    }
+  });
     </script>
- </head>
- <body>
+  </head>
+  <body>
     <div class="navbar">
-        <div class="logo">
-            <img src="img/logo.png"/>
-            <a href="index.html" style="text-decoration: none;">
-            <span>
-            EUREKA
-            </span>
-            </a>
-        </div>
-    <div class="hamburger" onclick="toggleMenu()">
-        <i class="fas fa-bars">
-        </i>
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo"/>
+        <a href="index.html" style="text-decoration: none;">
+          <span>EUREKA</span>
+        </a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="menu">
+        <a href="cursos.html">Cursos</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="login.html">Foro</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contacto.html" class="contacto">Contacto</a>
+      </div>
     </div>
-            <div class="menu">
-                    <a href="cursos.html">
-                    Cursos
-                    </a>
-                    <a href="recursos.html">
-                    Recursos
-                    </a>
-                    <a href="login.html">
-                    Foro
-                    </a>
-                    <a href="faq.html">
-                    FAQ
-                    </a>
-                    <a href="contacto.html" class="contacto">
-                    Contacto
-                    </a>
-            </div>
-        </div>
+
     <div class="content">
-    <div class="container">
-            <div class="image"></div>
-            <div class="form-container">
-                <h2>Iniciar Sesión</h2>
-                <form>
-                    <label for="email">Email <span style="color: red;">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="password">Contraseña <span style="color: red;">*</span></label>
-                    <input type="password" id="password" name="password" required>
-                    <input type="submit" value="Login" style="background-color: #6dc9dd;">
-                </form>
-                <script>
-                    document.querySelectorAll('.form-container form').forEach(form => {
-                        form.addEventListener('submit', function(event) {
-                            event.preventDefault();
-                            window.location.href = 'foro.html';
-                        });
-                    });
-                </script>
-                <div class="divider"></div>
-                <h2>Registrate</h2>
-                <form>
-                    <label for="register-email">Email <span style="color: red;">*</span></label>
-                    <input type="email" id="register-email" name="register-email" required>
-                    <label for="register-password">Contraseña <span style="color: red;">*</span></label>
-                    <input type="password" id="register-password" name="register-password" required>
-                    <label for="confirm-password">Repetir contraseña <span style="color: red;">*</span></label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                    <input type="submit" value="Registrarse" style="background-color: #6dc9dd;">
-                </form>
-            </div>
+      <div class="container">
+        <div class="image"></div>
+        <div class="form-container">
+          <h2>Iniciar Sesión</h2>
+          <form id="login-form">
+            <label for="email">Email <span style="color: red;">*</span></label>
+            <input type="email" id="email" name="email" required>
+            <div id="email-error" style="color: red; font-size: 12px;"></div>
+
+            <label for="password">Contraseña <span style="color: red;">*</span></label>
+            <input type="password" id="password" name="password" required>
+            <div id="password-error" style="color: red; font-size: 12px;"></div>
+
+            <input type="submit" value="Login" style="background-color: #6dc9dd;">
+          </form>
+
+          <div class="divider"></div>
+          <h2>Registrate</h2>
+          <form id="register-form">
+            <label for="register-email">Email <span style="color: red;">*</span></label>
+            <input type="email" id="register-email" name="register-email" required>
+            <div id="register-email-error" style="color: red; font-size: 12px;"></div>
+
+            <label for="register-password">Contraseña <span style="color: red;">*</span></label>
+            <input type="password" id="register-password" name="register-password" required>
+            <div id="register-password-error" style="color: red; font-size: 12px;"></div>
+
+            <label for="confirm-password">Repetir contraseña <span style="color: red;">*</span></label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <div id="confirm-password-error" style="color: red; font-size: 12px;"></div>
+
+            <input type="submit" value="Registrarse" style="background-color: #6dc9dd;">
+          </form>
         </div>
+      </div>
     </div>
-  <footer>
-   <p>
-    Materia: Diseño y Desarrollo Web    Curso: LUN, NOC    Grupo: 12
-   </p>
-   <p>
-    Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024
-   </p>
-   <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
-  </footer>
- </body>
+
+    <footer>
+      <p>Materia: Diseño y Desarrollo Web   Curso: LUN, NOC   Grupo: 12</p>
+      <p>Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+      <img alt="UADE logo" height="50" src="img/UADE.png" width="100"/>
+    </footer>
+  </body>
 </html>
